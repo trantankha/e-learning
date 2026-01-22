@@ -1,0 +1,122 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: learning_english_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minio123
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - app_network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest123
+    networks:
+      - app_network
+
+  worker:
+    image: e-learning-backend:latest
+    command: celery -A core.celery_app worker --loglevel=info
+    environment:
+      - CELERY_BROKER_URL=amqp://guest:guest123@rabbitmq:5672//
+      - POSTGRES_SERVER=db
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - rabbitmq
+      - backend
+    networks:
+      - app_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: e-learning-backend:latest
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - minio
+      - rabbitmq
+    networks:
+      - app_network
+
+  flower:
+    image: mher/flower
+    command: celery --broker=amqp://guest:guest123@rabbitmq:5672// flower
+    ports:
+      - "5555:5555"
+    depends_on:
+      - rabbitmq
+      - worker
+    networks:
+      - app_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - BACKEND_URL=http://backend:8000/api/v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+      - minio
+    networks:
+      - app_network
+
+  
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until /usr/bin/mc alias set myminio http://minio:9000 minioadmin minio123; do
+        echo 'MinIO not ready, retrying...';
+        sleep 1;
+      done;
+      /usr/bin/mc mb myminio/e-learning || true;
+      /usr/bin/mc anonymous set public myminio/e-learning;
+      exit 0;
+      "
+
+
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  minio_data:

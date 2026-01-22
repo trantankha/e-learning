@@ -1,0 +1,164 @@
+[
+    {
+        "word": "Cow",
+        "meaning": "Con bò sữa",
+        "pronunciation": "/kaʊ/",
+        "audio_url": "/audio/farm_animals/cow.mp3",
+        "image_url": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The cow gives us milk.",
+        "level": "Starters"
+    },
+    {
+        "word": "Pig",
+        "meaning": "Con lợn",
+        "pronunciation": "/pɪɡ/",
+        "audio_url": "/audio/farm_animals/pig.mp3",
+        "image_url": "https://images.unsplash.com/photo-1628151015690-3486a1a63c7b?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The pig likes to sleep.",
+        "level": "Starters"
+    },
+    {
+        "word": "Chicken",
+        "meaning": "Con gà",
+        "pronunciation": "/ˈtʃɪk.ɪn/",
+        "audio_url": "/audio/farm_animals/chicken.mp3",
+        "image_url": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The chicken lays eggs.",
+        "level": "Starters"
+    },
+    {
+        "word": "Duck",
+        "meaning": "Con vịt",
+        "pronunciation": "/dʌk/",
+        "audio_url": "/audio/farm_animals/duck.mp3",
+        "image_url": "https://images.unsplash.com/photo-1555852095-64e7428df0fa?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The duck can swim.",
+        "level": "Starters"
+    },
+    {
+        "word": "Sheep",
+        "meaning": "Con cừu",
+        "pronunciation": "/ʃiːp/",
+        "audio_url": "/audio/farm_animals/sheep.mp3",
+        "image_url": "https://images.unsplash.com/photo-1484557985045-edf25e08da73?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The sheep has white wool.",
+        "level": "Starters"
+    },
+    {
+        "word": "Horse",
+        "meaning": "Con ngựa",
+        "pronunciation": "/hɔːs/",
+        "audio_url": "/audio/farm_animals/horse.mp3",
+        "image_url": "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "I can ride a horse.",
+        "level": "Starters"
+    },
+    {
+        "word": "Goat",
+        "meaning": "Con dê",
+        "pronunciation": "/ɡəʊt/",
+        "audio_url": "/audio/farm_animals/goat.mp3",
+        "image_url": "https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The goat eats grass.",
+        "level": "Starters"
+    },
+    {
+        "word": "Rabbit",
+        "meaning": "Con thỏ",
+        "pronunciation": "/ˈræb.ɪt/",
+        "audio_url": "/audio/farm_animals/rabbit.mp3",
+        "image_url": "https://images.unsplash.com/photo-1585110396065-88b770652393?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The rabbit likes carrots.",
+        "level": "Starters"
+    },
+    {
+        "word": "Dog",
+        "meaning": "Con chó",
+        "pronunciation": "/dɒɡ/",
+        "audio_url": "/audio/farm_animals/dog.mp3",
+        "image_url": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The dog is my friend.",
+        "level": "Starters"
+    },
+    {
+        "word": "Cat",
+        "meaning": "Con mèo",
+        "pronunciation": "/kæt/",
+        "audio_url": "/audio/farm_animals/cat.mp3",
+        "image_url": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The cat says meow.",
+        "level": "Starters"
+    },
+    {
+        "word": "Mouse",
+        "meaning": "Con chuột",
+        "pronunciation": "/maʊs/",
+        "audio_url": "/audio/farm_animals/mouse.mp3",
+        "image_url": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The mouse is small.",
+        "level": "Starters"
+    },
+    {
+        "word": "Donkey",
+        "meaning": "Con lừa",
+        "pronunciation": "/ˈdɒŋ.ki/",
+        "audio_url": "/audio/farm_animals/donkey.mp3",
+        "image_url": "https://images.unsplash.com/photo-1556637640-2c80d3201be8?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The donkey has long ears.",
+        "level": "Starters"
+    },
+    {
+        "word": "Rooster",
+        "meaning": "Con gà trống",
+        "pronunciation": "/ˈruː.stər/",
+        "audio_url": "/audio/farm_animals/rooster.mp3",
+        "image_url": "https://images.unsplash.com/photo-1563514227147-6d2ff665a5a0?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The rooster wakes me up.",
+        "level": "Starters"
+    },
+    {
+        "word": "Goose",
+        "meaning": "Con ngỗng",
+        "pronunciation": "/ɡuːs/",
+        "audio_url": "/audio/farm_animals/goose.mp3",
+        "image_url": "https://images.unsplash.com/photo-1550275524-11082662054b?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The goose is white.",
+        "level": "Starters"
+    },
+    {
+        "word": "Turkey",
+        "meaning": "Gà tây",
+        "pronunciation": "/ˈtɜː.ki/",
+        "audio_url": "/audio/farm_animals/turkey.mp3",
+        "image_url": "https://images.unsplash.com/photo-1601618239089-a2e6f403c9cc?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "We eat turkey for dinner.",
+        "level": "Starters"
+    },
+    {
+        "word": "Bee",
+        "meaning": "Con ong",
+        "pronunciation": "/biː/",
+        "audio_url": "/audio/farm_animals/bee.mp3",
+        "image_url": "https://images.unsplash.com/photo-1588731234159-8b9963143fca?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The bee makes honey.",
+        "level": "Starters"
+    },
+    {
+        "word": "Frog",
+        "meaning": "Con ếch",
+        "pronunciation": "/frɒɡ/",
+        "audio_url": "/audio/farm_animals/frog.mp3",
+        "image_url": "https://images.unsplash.com/photo-1579564858928-876a4ba7ff45?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The frog jumps high.",
+        "level": "Starters"
+    },
+    {
+        "word": "Bird",
+        "meaning": "Con chim",
+        "pronunciation": "/bɜːd/",
+        "audio_url": "/audio/farm_animals/bird.mp3",
+        "image_url": "https://images.unsplash.com/photo-1444464666117-26f6032acd60?auto=format&fit=crop&w=800&q=80",
+        "example_sentence": "The bird sings a song.",
+        "level": "Starters"
+    }
+]

@@ -1,0 +1,178 @@
+# === Python ===
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Pylint
+.pylintrc
+.pytest_cache/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+
+# Unit test / coverage reports
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+backend/.env
+backend/.env.local
+
+# Alembic
+alembic/versions/__pycache__/
+
+# === Node.js ===
+# Dependencies
+node_modules/
+npm-debug.log
+npm-debug.log.*
+yarn-debug.log
+yarn-error.log
+yarn.lock
+pnpm-lock.yaml
+lerna-debug.log
+
+# Build output
+dist/
+build/
+.next/
+out/
+.nuxt/
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Frontend specific
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+frontend/.env.*.local
+
+# === Development ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.tmp
+tmp/
+
+# Logs
+logs/
+*.log
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# OS specific
+.vscode/settings.json
+.vscode/extensions.json
+
+# === Docker ===
+# Docker compose volumes (keep images, ignore local volumes)
+postgres_data/
+minio_data/
+redis_data/
+
+# === Project specific ===
+# Database backups
+*.sql
+!schema.sql
+
+# Media uploads (if stored locally)
+uploads/
+media/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.DS_Store
+
+# API keys and secrets (should be in .env)
+# Make sure sensitive data goes to .env files
+
+# Generated files
+*.egg-info
+site-packages/
+
+# Celery
+celerybeat-schedule
+dump.rdb
+
+# Testing
+.pytest_cache/
+.coverage
+
+# IDE temporary files
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# === Keep important files ===
+!.gitkeep
+!requirements.txt
+!package.json

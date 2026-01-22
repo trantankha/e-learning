@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Red Cap",
+        "description": "A cool red baseball cap",
+        "price": 50,
+        "category": "hat",
+        "layer_order": 4,
+        "image_url": "🧢"
+    },
+    {
+        "name": "Blue T-Shirt",
+        "description": "Simple and comfy blue t-shirt",
+        "price": 100,
+        "category": "shirt",
+        "layer_order": 2,
+        "image_url": "👕"
+    },
+    {
+        "name": "Sunglasses",
+        "description": "Look cool in the sun",
+        "price": 150,
+        "category": "glasses",
+        "layer_order": 3,
+        "image_url": "🕶️"
+    },
+    {
+        "name": "Beach Background",
+        "description": "Sunny beach background",
+        "price": 200,
+        "category": "background",
+        "layer_order": 0,
+        "image_url": "🏖️"
+    },
+    {
+        "name": "Standard Body",
+        "description": "Standard character body",
+        "price": 0,
+        "category": "body",
+        "layer_order": 1,
+        "image_url": "🧍"
+    },
+    {
+        "name": "Cowboy Hat",
+        "description": "Yeehaw!",
+        "price": 120,
+        "category": "hat",
+        "layer_order": 4,
+        "image_url": "🤠"
+    }
+]

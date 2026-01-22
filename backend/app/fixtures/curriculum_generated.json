@@ -1,0 +1,1122 @@
+[
+  {
+    "order_index": 1,
+    "title": "My Family",
+    "lessons": [
+      {
+        "title": "Family Members",
+        "vocabulary": [
+          "Grandma",
+          "Grandpa",
+          "Mum",
+          "Dad",
+          "Sister"
+        ],
+        "questions": [
+          {
+            "text": "Who is she?",
+            "options": [
+              "She is my Mum",
+              "He is my Dad",
+              "It is a cat",
+              "She is my Brother"
+            ],
+            "correct_answer": "She is my Mum"
+          },
+          {
+            "text": "Who is he?",
+            "options": [
+              "He is my Grandpa",
+              "She is my Grandma",
+              "He is my Sister",
+              "It is a dog"
+            ],
+            "correct_answer": "He is my Grandpa"
+          },
+          {
+            "text": "Is this your sister?",
+            "options": [
+              "Yes, she is",
+              "No, he is",
+              "Yes, he is",
+              "No, she is my Brother"
+            ],
+            "correct_answer": "Yes, she is"
+          },
+          {
+            "text": "Find the word: D-A-D",
+            "options": [
+              "Dad",
+              "Dog",
+              "Day",
+              "Dig"
+            ],
+            "correct_answer": "Dad"
+          }
+        ],
+        "pronunciation_target": "Sister"
+      },
+      {
+        "title": "Feelings",
+        "vocabulary": [
+          "Happy",
+          "Sad",
+          "Angry",
+          "Tired",
+          "Hungry"
+        ],
+        "questions": [
+          {
+            "text": "How are you?",
+            "options": [
+              "I'm happy",
+              "I'm seven",
+              "I'm a boy",
+              "I'm green"
+            ],
+            "correct_answer": "I'm happy"
+          },
+          {
+            "text": "Are you sad?",
+            "options": [
+              "Yes, I am",
+              "No, I don't",
+              "Yes, I do",
+              "No, I am happy"
+            ],
+            "correct_answer": "Yes, I am"
+          },
+          {
+            "text": "He is wanting food. He is...",
+            "options": [
+              "Hungry",
+              "Angry",
+              "Happy",
+              "Sad"
+            ],
+            "correct_answer": "Hungry"
+          },
+          {
+            "text": "She wants to sleep. She is...",
+            "options": [
+              "Tired",
+              "Sad",
+              "Happy",
+              "Hungry"
+            ],
+            "correct_answer": "Tired"
+          }
+        ],
+        "pronunciation_target": "Happy"
+      }
+    ]
+  },
+  {
+    "order_index": 2,
+    "title": "My School",
+    "lessons": [
+      {
+        "title": "Classroom Objects",
+        "vocabulary": [
+          "Pencil",
+          "Rubber",
+          "Ruler",
+          "Book",
+          "Bag"
+        ],
+        "questions": [
+          {
+            "text": "What is it?",
+            "options": [
+              "It's a pencil",
+              "It's a dog",
+              "It's a car",
+              "It's a ball"
+            ],
+            "correct_answer": "It's a pencil"
+          },
+          {
+            "text": "Can I have a ruler?",
+            "options": [
+              "Here you are",
+              "Yes, I am",
+              "No, it isn't",
+              "No, thank you"
+            ],
+            "correct_answer": "Here you are"
+          },
+          {
+            "text": "Is it a rubber?",
+            "options": [
+              "Yes, it is",
+              "Yes, it does",
+              "No, I don't",
+              "No, it is a book"
+            ],
+            "correct_answer": "Yes, it is"
+          },
+          {
+            "text": "Open your...",
+            "options": [
+              "Book",
+              "Pencil",
+              "Rubber",
+              "Bag"
+            ],
+            "correct_answer": "Book"
+          }
+        ],
+        "pronunciation_target": "Ruler"
+      },
+      {
+        "title": "School Actions",
+        "vocabulary": [
+          "Read",
+          "Write",
+          "Draw",
+          "Listen",
+          "Stand up"
+        ],
+        "questions": [
+          {
+            "text": "Teacher says: ______ up!",
+            "options": [
+              "Stand",
+              "Sit",
+              "Listen",
+              "Look"
+            ],
+            "correct_answer": "Stand"
+          },
+          {
+            "text": "Please ______ your name.",
+            "options": [
+              "Write",
+              "Read",
+              "Eat",
+              "Sleep"
+            ],
+            "correct_answer": "Write"
+          },
+          {
+            "text": "______ to the teacher.",
+            "options": [
+              "Listen",
+              "Look",
+              "Go",
+              "Play"
+            ],
+            "correct_answer": "Listen"
+          },
+          {
+            "text": "Can you ______ a picture?",
+            "options": [
+              "Draw",
+              "Read",
+              "Sing",
+              "Dance"
+            ],
+            "correct_answer": "Draw"
+          }
+        ],
+        "pronunciation_target": "Write"
+      }
+    ]
+  },
+  {
+    "order_index": 3,
+    "title": "My Toys",
+    "lessons": [
+      {
+        "title": "In the Toy Box",
+        "vocabulary": [
+          "Doll",
+          "Ball",
+          "Teddy",
+          "Robot",
+          "Kite"
+        ],
+        "questions": [
+          {
+            "text": "I have got a...",
+            "options": [
+              "Robot",
+              "Rabbit",
+              "Red",
+              "Rat"
+            ],
+            "correct_answer": "Robot"
+          },
+          {
+            "text": "Fly a...",
+            "options": [
+              "Kite",
+              "Cat",
+              "Car",
+              "Cup"
+            ],
+            "correct_answer": "Kite"
+          },
+          {
+            "text": "Is it a teddy bear?",
+            "options": [
+              "Yes, it is",
+              "No, I'm not",
+              "Yes, I play",
+              "No, it is a doll"
+            ],
+            "correct_answer": "Yes, it is"
+          },
+          {
+            "text": "Kick the...",
+            "options": [
+              "Ball",
+              "Doll",
+              "Kite",
+              "Robot"
+            ],
+            "correct_answer": "Ball"
+          }
+        ],
+        "pronunciation_target": "Robot"
+      },
+      {
+        "title": "Describing Toys",
+        "vocabulary": [
+          "Big",
+          "Small",
+          "New",
+          "Old",
+          "Favorite"
+        ],
+        "questions": [
+          {
+            "text": "The elephant is...",
+            "options": [
+              "Big",
+              "Small",
+              "Green",
+              "Blue"
+            ],
+            "correct_answer": "Big"
+          },
+          {
+            "text": "The mouse is...",
+            "options": [
+              "Small",
+              "Big",
+              "Blue",
+              "Red"
+            ],
+            "correct_answer": "Small"
+          },
+          {
+            "text": "This is my ______ toy.",
+            "options": [
+              "Favorite",
+              "Fast",
+              "Four",
+              "Five"
+            ],
+            "correct_answer": "Favorite"
+          },
+          {
+            "text": "Is your bike new?",
+            "options": [
+              "No, it's old",
+              "Yes, it's big",
+              "No, it's blue",
+              "Yes, it is red"
+            ],
+            "correct_answer": "No, it's old"
+          }
+        ],
+        "pronunciation_target": "Small"
+      }
+    ]
+  },
+  {
+    "order_index": 4,
+    "title": "Food & Drink",
+    "lessons": [
+      {
+        "title": "Yummy Fruit",
+        "vocabulary": [
+          "Apple",
+          "Banana",
+          "Orange",
+          "Mango",
+          "Grape"
+        ],
+        "questions": [
+          {
+            "text": "What do you like?",
+            "options": [
+              "I like apples",
+              "I like chairs",
+              "I like blue",
+              "I like books"
+            ],
+            "correct_answer": "I like apples"
+          },
+          {
+            "text": "Is it a banana?",
+            "options": [
+              "Yes, it is",
+              "No, it is an apple",
+              "Yes, I do",
+              "No, it is a grape"
+            ],
+            "correct_answer": "Yes, it is"
+          },
+          {
+            "text": "What color is a grape?",
+            "options": [
+              "Purple",
+              "Blue",
+              "Pink",
+              "Yellow"
+            ],
+            "correct_answer": "Purple"
+          },
+          {
+            "text": "Do you like mangoes?",
+            "options": [
+              "Yes, I do",
+              "Yes, I am",
+              "No, it isn't",
+              "No, I am not"
+            ],
+            "correct_answer": "Yes, I do"
+          }
+        ],
+        "pronunciation_target": "Banana"
+      },
+      {
+        "title": "Lunch Time",
+        "vocabulary": [
+          "Chicken",
+          "Rice",
+          "Pizza",
+          "Milk",
+          "Water"
+        ],
+        "questions": [
+          {
+            "text": "I'm hungry. I want...",
+            "options": [
+              "Pizza",
+              "Water",
+              "Milk",
+              "Juice"
+            ],
+            "correct_answer": "Pizza"
+          },
+          {
+            "text": "I'm thirsty. I want...",
+            "options": [
+              "Water",
+              "Chicken",
+              "Rice",
+              "Bread"
+            ],
+            "correct_answer": "Water"
+          },
+          {
+            "text": "Do you like chicken?",
+            "options": [
+              "Yes, I do",
+              "No, I am",
+              "Yes, it is",
+              "No, I don't"
+            ],
+            "correct_answer": "Yes, I do"
+          },
+          {
+            "text": "Rice is...",
+            "options": [
+              "White",
+              "Blue",
+              "Green",
+              "Red"
+            ],
+            "correct_answer": "White"
+          }
+        ],
+        "pronunciation_target": "Chicken"
+      }
+    ]
+  },
+  {
+    "order_index": 5,
+    "title": "Animals",
+    "lessons": [
+      {
+        "title": "Farm Animals",
+        "vocabulary": [
+          "Cow",
+          "Sheep",
+          "Horse",
+          "Duck",
+          "Pig"
+        ],
+        "questions": [
+          {
+            "text": "The cow says...",
+            "options": [
+              "Moo",
+              "Quack",
+              "Baa",
+              "Meow"
+            ],
+            "correct_answer": "Moo"
+          },
+          {
+            "text": "Does a duck swim?",
+            "options": [
+              "Yes, it does",
+              "No, it doesn't",
+              "Yes, I do",
+              "No, it is flying"
+            ],
+            "correct_answer": "Yes, it does"
+          },
+          {
+            "text": "How many legs has a horse got?",
+            "options": [
+              "Four",
+              "Two",
+              "Six",
+              "Eight"
+            ],
+            "correct_answer": "Four"
+          },
+          {
+            "text": "Is it a sheep?",
+            "options": [
+              "Yes, it is",
+              "No, it's a pig",
+              "Yes, I can",
+              "No, it is a cow"
+            ],
+            "correct_answer": "Yes, it is"
+          }
+        ],
+        "pronunciation_target": "Horse"
+      },
+      {
+        "title": "Zoo Animals",
+        "vocabulary": [
+          "Lion",
+          "Tiger",
+          "Elephant",
+          "Giraffe",
+          "Monkey"
+        ],
+        "questions": [
+          {
+            "text": "A giraffe is...",
+            "options": [
+              "Tall",
+              "Small",
+              "Short",
+              "Fat"
+            ],
+            "correct_answer": "Tall"
+          },
+          {
+            "text": "Can a monkey climb?",
+            "options": [
+              "Yes, it can",
+              "No, it can't",
+              "Yes, I do",
+              "No, it swims"
+            ],
+            "correct_answer": "Yes, it can"
+          },
+          {
+            "text": "The lion is the king of the...",
+            "options": [
+              "Jungle",
+              "Sea",
+              "House",
+              "City"
+            ],
+            "correct_answer": "Jungle"
+          },
+          {
+            "text": "Elephants have big...",
+            "options": [
+              "Ears",
+              "Noses",
+              "Hands",
+              "Eyes"
+            ],
+            "correct_answer": "Ears"
+          }
+        ],
+        "pronunciation_target": "Giraffe"
+      }
+    ]
+  },
+  {
+    "order_index": 6,
+    "title": "My Body",
+    "lessons": [
+      {
+        "title": "Face Parts",
+        "vocabulary": [
+          "Eyes",
+          "Ears",
+          "Nose",
+          "Mouth",
+          "Face"
+        ],
+        "questions": [
+          {
+            "text": "Touch your...",
+            "options": [
+              "Nose",
+              "Car",
+              "Apple",
+              "Book"
+            ],
+            "correct_answer": "Nose"
+          },
+          {
+            "text": "How many eyes do you have?",
+            "options": [
+              "Two",
+              "One",
+              "Ten",
+              "Three"
+            ],
+            "correct_answer": "Two"
+          },
+          {
+            "text": "I smell with my...",
+            "options": [
+              "Nose",
+              "Ears",
+              "Eyes",
+              "Hands"
+            ],
+            "correct_answer": "Nose"
+          },
+          {
+            "text": "I eat with my...",
+            "options": [
+              "Mouth",
+              "Hair",
+              "Feet",
+              "Nose"
+            ],
+            "correct_answer": "Mouth"
+          }
+        ],
+        "pronunciation_target": "Mouth"
+      },
+      {
+        "title": "Body Movement",
+        "vocabulary": [
+          "Hands",
+          "Feet",
+          "Arms",
+          "Legs",
+          "Head"
+        ],
+        "questions": [
+          {
+            "text": "Clap your...",
+            "options": [
+              "Hands",
+              "Head",
+              "Legs",
+              "Toes"
+            ],
+            "correct_answer": "Hands"
+          },
+          {
+            "text": "Stomp your...",
+            "options": [
+              "Feet",
+              "Arms",
+              "Ears",
+              "Eyes"
+            ],
+            "correct_answer": "Feet"
+          },
+          {
+            "text": "Wave your...",
+            "options": [
+              "Arms",
+              "Eyes",
+              "Nose",
+              "Hair"
+            ],
+            "correct_answer": "Arms"
+          },
+          {
+            "text": "Shake your...",
+            "options": [
+              "Head",
+              "Mouth",
+              "Toes",
+              "Fingers"
+            ],
+            "correct_answer": "Head"
+          }
+        ],
+        "pronunciation_target": "Hands"
+      }
+    ]
+  },
+  {
+    "order_index": 7,
+    "title": "My Clothes",
+    "lessons": [
+      {
+        "title": "Summer Clothes",
+        "vocabulary": [
+          "T-shirt",
+          "Shorts",
+          "Hat",
+          "Dress",
+          "Sunglasses"
+        ],
+        "questions": [
+          {
+            "text": "It's hot. Put on your...",
+            "options": [
+              "Hat",
+              "Coat",
+              "Boots",
+              "Scarf"
+            ],
+            "correct_answer": "Hat"
+          },
+          {
+            "text": "He is wearing a blue...",
+            "options": [
+              "T-shirt",
+              "T-short",
+              "Tie",
+              "Tree"
+            ],
+            "correct_answer": "T-shirt"
+          },
+          {
+            "text": "Do you like my dress?",
+            "options": [
+              "Yes, it's pretty",
+              "Yes, I am",
+              "No, it isn't",
+              "No, I am not"
+            ],
+            "correct_answer": "Yes, it's pretty"
+          },
+          {
+            "text": "I wear shorts in...",
+            "options": [
+              "Summer",
+              "Winter",
+              "Rain",
+              "Snow"
+            ],
+            "correct_answer": "Summer"
+          }
+        ],
+        "pronunciation_target": "Dress"
+      },
+      {
+        "title": "Winter Clothes",
+        "vocabulary": [
+          "Coat",
+          "Jacket",
+          "Scarf",
+          "Gloves",
+          "Boots"
+        ],
+        "questions": [
+          {
+            "text": "It's cold. Wear your...",
+            "options": [
+              "Coat",
+              "Shorts",
+              "T-shirt",
+              "Sandals"
+            ],
+            "correct_answer": "Coat"
+          },
+          {
+            "text": "Where are my gloves?",
+            "options": [
+              "On your hands",
+              "On your feet",
+              "On your head",
+              "On your legs"
+            ],
+            "correct_answer": "On your hands"
+          },
+          {
+            "text": "Is this a scarf?",
+            "options": [
+              "Yes, it is",
+              "No, it's a hat",
+              "Yes, I do",
+              "No, it is a coat"
+            ],
+            "correct_answer": "Yes, it is"
+          },
+          {
+            "text": "I wear boots when it...",
+            "options": [
+              "Snows",
+              "Sunnies",
+              "Hots",
+              "Rains"
+            ],
+            "correct_answer": "Snows"
+          }
+        ],
+        "pronunciation_target": "Scarf"
+      }
+    ]
+  },
+  {
+    "order_index": 8,
+    "title": "My House",
+    "lessons": [
+      {
+        "title": "Rooms",
+        "vocabulary": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "Living Room",
+          "Garden"
+        ],
+        "questions": [
+          {
+            "text": "I sleep in the...",
+            "options": [
+              "Bedroom",
+              "Kitchen",
+              "Garden",
+              "Bathroom"
+            ],
+            "correct_answer": "Bedroom"
+          },
+          {
+            "text": "I cook  in the...",
+            "options": [
+              "Kitchen",
+              "Bathroom",
+              "Living Room",
+              "Garden"
+            ],
+            "correct_answer": "Kitchen"
+          },
+          {
+            "text": "Where is Mum?",
+            "options": [
+              "She's in the garden",
+              "She's on the garden",
+              "She's garden",
+              "She's at the garden"
+            ],
+            "correct_answer": "She's in the garden"
+          },
+          {
+            "text": "Watch TV in the...",
+            "options": [
+              "Living Room",
+              "Bathroom",
+              "Hall",
+              "Kitchen"
+            ],
+            "correct_answer": "Living Room"
+          }
+        ],
+        "pronunciation_target": "Kitchen"
+      },
+      {
+        "title": "Furniture",
+        "vocabulary": [
+          "Bed",
+          "Sofa",
+          "Table",
+          "Chair",
+          "Lamp"
+        ],
+        "questions": [
+          {
+            "text": "Sit on the...",
+            "options": [
+              "Chair",
+              "Table",
+              "Lamp",
+              "Bed"
+            ],
+            "correct_answer": "Chair"
+          },
+          {
+            "text": "The lamp is on the...",
+            "options": [
+              "Table",
+              "Bed",
+              "Sofa",
+              "Floor"
+            ],
+            "correct_answer": "Table"
+          },
+          {
+            "text": "Is the sofa soft?",
+            "options": [
+              "Yes, it is",
+              "No, I don't",
+              "Yes, I am",
+              "No, it is hard"
+            ],
+            "correct_answer": "Yes, it is"
+          },
+          {
+            "text": "Go to...",
+            "options": [
+              "Bed",
+              "Table",
+              "Chair",
+              "Floor"
+            ],
+            "correct_answer": "Bed"
+          }
+        ],
+        "pronunciation_target": "Chair"
+      }
+    ]
+  },
+  {
+    "order_index": 9,
+    "title": "Transport",
+    "lessons": [
+      {
+        "title": "Road Vehicles",
+        "vocabulary": [
+          "Car",
+          "Bus",
+          "Bike",
+          "Truck",
+          "Motorbike"
+        ],
+        "questions": [
+          {
+            "text": "The bus is...",
+            "options": [
+              "Big",
+              "Small",
+              "Short",
+              "Tiny"
+            ],
+            "correct_answer": "Big"
+          },
+          {
+            "text": "I ride my...",
+            "options": [
+              "Bike",
+              "Bus",
+              "Car",
+              "Truck"
+            ],
+            "correct_answer": "Bike"
+          },
+          {
+            "text": "How many wheels does a car have?",
+            "options": [
+              "Four",
+              "Two",
+              "One",
+              "Three"
+            ],
+            "correct_answer": "Four"
+          },
+          {
+            "text": "Is it a truck?",
+            "options": [
+              "Yes, it is",
+              "No, it's a bike",
+              "Yes, I do",
+              "No, it is a car"
+            ],
+            "correct_answer": "Yes, it is"
+          }
+        ],
+        "pronunciation_target": "Bike"
+      },
+      {
+        "title": "Air and Sea",
+        "vocabulary": [
+          "Plane",
+          "Helicopter",
+          "Boat",
+          "Ship",
+          "Train"
+        ],
+        "questions": [
+          {
+            "text": "A plane flies in the...",
+            "options": [
+              "Sky",
+              "Sea",
+              "Road",
+              "Water"
+            ],
+            "correct_answer": "Sky"
+          },
+          {
+            "text": "A boat goes on...",
+            "options": [
+              "Water",
+              "Air",
+              "Land",
+              "Road"
+            ],
+            "correct_answer": "Water"
+          },
+          {
+            "text": "Is the train fast?",
+            "options": [
+              "Yes, it is",
+              "No, it is slow",
+              "Yes, I am",
+              "No, it is not"
+            ],
+            "correct_answer": "Yes, it is"
+          },
+          {
+            "text": "Look at the big...",
+            "options": [
+              "Ship",
+              "Bike",
+              "Car",
+              "Bus"
+            ],
+            "correct_answer": "Ship"
+          }
+        ],
+        "pronunciation_target": "Plane"
+      }
+    ]
+  },
+  {
+    "order_index": 10,
+    "title": "Hobbies",
+    "lessons": [
+      {
+        "title": "Sports",
+        "vocabulary": [
+          "Football",
+          "Basketball",
+          "Swimming",
+          "Tennis",
+          "Running"
+        ],
+        "questions": [
+          {
+            "text": "Let's play...",
+            "options": [
+              "Football",
+              "Running",
+              "Swimming",
+              "Dancing"
+            ],
+            "correct_answer": "Football"
+          },
+          {
+            "text": "I like...",
+            "options": [
+              "Swimming",
+              "Swim",
+              "Swims",
+              "Swam"
+            ],
+            "correct_answer": "Swimming"
+          },
+          {
+            "text": "Can you play tennis?",
+            "options": [
+              "Yes, I can",
+              "No, I don't",
+              "Yes, it is",
+              "No, I cannot"
+            ],
+            "correct_answer": "Yes, I can"
+          },
+          {
+            "text": "He is...",
+            "options": [
+              "Running",
+              "Run",
+              "Runs",
+              "Ran"
+            ],
+            "correct_answer": "Running"
+          }
+        ],
+        "pronunciation_target": "Swimming"
+      },
+      {
+        "title": "Creative Fun",
+        "vocabulary": [
+          "Painting",
+          "Singing",
+          "Dancing",
+          "Reading",
+          "Cooking"
+        ],
+        "questions": [
+          {
+            "text": "She is...",
+            "options": [
+              "Singing",
+              "Sing",
+              "Sings",
+              "Song"
+            ],
+            "correct_answer": "Singing"
+          },
+          {
+            "text": "Do you like painting?",
+            "options": [
+              "Yes, I do",
+              "No, I am",
+              "Yes, it is",
+              "No, I don't"
+            ],
+            "correct_answer": "Yes, I do"
+          },
+          {
+            "text": "I represent a book. I am...",
+            "options": [
+              "Reading",
+              "Cooking",
+              "Dancing",
+              "Running"
+            ],
+            "correct_answer": "Reading"
+          },
+          {
+            "text": "They are...",
+            "options": [
+              "Dancing",
+              "Dance",
+              "Dances",
+              "Danced"
+            ],
+            "correct_answer": "Dancing"
+          }
+        ],
+        "pronunciation_target": "Dancing"
+      }
+    ]
+  }
+]

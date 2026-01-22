@@ -1,0 +1,778 @@
+[
+  {
+    "level_id": "L1",
+    "level_name": "Starters (Pre-A1)",
+    "target_age": "6-8",
+    "description": "Làm quen với tiếng Anh, từ vựng cơ bản và câu đơn giản.",
+    "units": [
+      {
+        "unit_id": "L1-U1",
+        "title": "Hello!",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Greetings, Numbers 1-10, Colors",
+            "thumbnail_url": "http://localhost:9000/e-learning/a49264d4-1d7b-4963-acb5-ace78c84a609.png",
+            "video_url": "http://localhost:9000/e-learning/b82d7572-f84e-4787-bccd-12d777070415.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Verb 'to be' (I am, You are), What's your name?",
+            "thumbnail_url": "https://placehold.co/600x400?text=Verb+'to+be'+(I+am,+You+are),+What's+your+name?",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /a/ (apple), /b/ (ball)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/a/+(apple),+/b/+(ball)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Listen and match names, color items",
+            "thumbnail_url": "https://placehold.co/600x400?text=Listen+and+match+names,+color+items",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U2",
+        "title": "My School",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "School objects (pen, pencil, book, bag)",
+            "thumbnail_url": "https://placehold.co/600x400?text=School+objects+(pen,+pencil,+book,+bag)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "This is / That is; Plurals (s)",
+            "thumbnail_url": "https://placehold.co/600x400?text=This+is+/+That+is;+Plurals+(s)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /c/ (cat), /d/ (dog)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/c/+(cat),+/d/+(dog)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Identify school objects in the classroom",
+            "thumbnail_url": "https://placehold.co/600x400?text=Identify+school+objects+in+the+classroom",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U3",
+        "title": "My Family",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Family members (mum, dad, brother, sister)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Family+members+(mum,+dad,+brother,+sister)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Possessive adjectives (my, your); Who is he/she?",
+            "thumbnail_url": "https://placehold.co/600x400?text=Possessive+adjectives+(my,+your);+Who+is+he/she?",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /e/ (egg), /f/ (fish)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/e/+(egg),+/f/+(fish)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Listen to family descriptions",
+            "thumbnail_url": "https://placehold.co/600x400?text=Listen+to+family+descriptions",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U4",
+        "title": "My Body",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Body parts (head, arm, leg, face)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Body+parts+(head,+arm,+leg,+face)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "I have got / He has got",
+            "thumbnail_url": "https://placehold.co/600x400?text=I+have+got+/+He+has+got",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /g/ (goat), /h/ (hat)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/g/+(goat),+/h/+(hat)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Simon says (actions with body parts)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Simon+says+(actions+with+body+parts)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U5",
+        "title": "Food and Drink",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Fruits, common foods, drinks",
+            "thumbnail_url": "https://placehold.co/600x400?text=Fruits,+common+foods,+drinks",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "I like / I don't like; Do you like...?",
+            "thumbnail_url": "https://placehold.co/600x400?text=I+like+/+I+don't+like;+Do+you+like...?",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /i/ (igloo), /j/ (jam)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/i/+(igloo),+/j/+(jam)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Listen and choose the food",
+            "thumbnail_url": "https://placehold.co/600x400?text=Listen+and+choose+the+food",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U6",
+        "title": "Animals",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Common animals (dog, cat, duck, cow)",
+            "thumbnail_url": "http://localhost:9000/e-learning/53ee77ca-f85f-40f8-bdb4-13e57059eabd.png",
+            "video_url": "http://localhost:9000/e-learning/012ed35e-8319-4ddc-9d8f-7f05983fa84d.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Can / Can't (ability)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Can+/+Can't+(ability)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /k/ (kite), /l/ (lion)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/k/+(kite),+/l/+(lion)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Guess the animal sound",
+            "thumbnail_url": "https://placehold.co/600x400?text=Guess+the+animal+sound",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U7",
+        "title": "My Clothes",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Clothes (t-shirt, jeans, dress, shoes)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Clothes+(t-shirt,+jeans,+dress,+shoes)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Present Continuous (He is wearing...)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Present+Continuous+(He+is+wearing...)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /m/ (monkey), /n/ (nose)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/m/+(monkey),+/n/+(nose)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Color the clothes",
+            "thumbnail_url": "https://placehold.co/600x400?text=Color+the+clothes",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U8",
+        "title": "My House",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Rooms (bedroom, bathroom, kitchen, living room)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Rooms+(bedroom,+bathroom,+kitchen,+living+room)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Prepositions (in, on, under)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Prepositions+(in,+on,+under)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /o/ (orange), /p/ (pen)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/o/+(orange),+/p/+(pen)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Where is the mouse?",
+            "thumbnail_url": "https://placehold.co/600x400?text=Where+is+the+mouse?",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U9",
+        "title": "Hobbies",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Activities (running, swimming, painting)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Activities+(running,+swimming,+painting)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "What are you doing? I am...-ing",
+            "thumbnail_url": "https://placehold.co/600x400?text=What+are+you+doing?+I+am...-ing",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /q/ (queen), /r/ (rabbit)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/q/+(queen),+/r/+(rabbit)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Match people to hobbies",
+            "thumbnail_url": "https://placehold.co/600x400?text=Match+people+to+hobbies",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L1-U10",
+        "title": "Transport",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Vehicles (car, bus, bike, train, boat)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Vehicles+(car,+bus,+bike,+train,+boat)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Go by (car/bus); Review Starters",
+            "thumbnail_url": "https://placehold.co/600x400?text=Go+by+(car/bus);+Review+Starters",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sounds /s/ (sun), /t/ (tiger)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sounds+/s/+(sun),+/t/+(tiger)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Listen and draw lines",
+            "thumbnail_url": "https://placehold.co/600x400?text=Listen+and+draw+lines",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "level_id": "L2",
+    "level_name": "Movers (A1)",
+    "target_age": "8-11",
+    "description": "Mở rộng vốn từ, ngữ pháp ở thì quá khứ, so sánh.",
+    "units": [
+      {
+        "unit_id": "L2-U1",
+        "title": "Friends & Weekends",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Days of the week, weekend activities",
+            "thumbnail_url": "https://placehold.co/600x400?text=Days+of+the+week,+weekend+activities",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Adverbs of frequency (always, sometimes, never)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Adverbs+of+frequency+(always,+sometimes,+never)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Long vowels A (cake, rain)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Long+vowels+A+(cake,+rain)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Listen to weekly schedules",
+            "thumbnail_url": "https://placehold.co/600x400?text=Listen+to+weekly+schedules",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U2",
+        "title": "The Weather",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Weather conditions (sunny, rainy, cloudy, windy, snow)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Weather+conditions+(sunny,+rainy,+cloudy,+windy,+snow)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Comparatives (hotter, colder)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Comparatives+(hotter,+colder)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Long vowels E (feet, leaf)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Long+vowels+E+(feet,+leaf)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Weather forecast",
+            "thumbnail_url": "https://placehold.co/600x400?text=Weather+forecast",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U3",
+        "title": "Around Town",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Places (library, hospital, market, park)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Places+(library,+hospital,+market,+park)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Prepositions of place (next to, opposite, between)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Prepositions+of+place+(next+to,+opposite,+between)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Long vowels I (bike, fly)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Long+vowels+I+(bike,+fly)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Giving directions",
+            "thumbnail_url": "https://placehold.co/600x400?text=Giving+directions",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U4",
+        "title": "Daily Routine",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Time, Daily actions (get up, brush teeth)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Time,+Daily+actions+(get+up,+brush+teeth)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Past Simple (Regular verbs)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Past+Simple+(Regular+verbs)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Long vowels O (boat, home)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Long+vowels+O+(boat,+home)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "What did you do yesterday?",
+            "thumbnail_url": "https://placehold.co/600x400?text=What+did+you+do+yesterday?",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U5",
+        "title": "Health Matters",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Ailments (headache, stomachache, cold)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Ailments+(headache,+stomachache,+cold)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Should / Should not",
+            "thumbnail_url": "https://placehold.co/600x400?text=Should+/+Should+not",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Long vowels U (moon, tube)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Long+vowels+U+(moon,+tube)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "At the doctor",
+            "thumbnail_url": "https://placehold.co/600x400?text=At+the+doctor",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U6",
+        "title": "Party Time",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Party objects, ordinal numbers",
+            "thumbnail_url": "https://placehold.co/600x400?text=Party+objects,+ordinal+numbers",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Past Simple (Irregular verbs: came, ate, drank)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Past+Simple+(Irregular+verbs:+came,+ate,+drank)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Consonant blends (st, pl, gr)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Consonant+blends+(st,+pl,+gr)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Birthday party stories",
+            "thumbnail_url": "https://placehold.co/600x400?text=Birthday+party+stories",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U7",
+        "title": "The World Around Us",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Nature (mountain, river, forest, field)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Nature+(mountain,+river,+forest,+field)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Superlatives (the biggest, the longest)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Superlatives+(the+biggest,+the+longest)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Th sounds (this, think)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Th+sounds+(this,+think)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Quiz about nature",
+            "thumbnail_url": "https://placehold.co/600x400?text=Quiz+about+nature",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U8",
+        "title": "Jobs",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Occupations (teacher, doctor, farmer, driver)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Occupations+(teacher,+doctor,+farmer,+driver)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Relative clauses with 'who' / 'that'",
+            "thumbnail_url": "https://placehold.co/600x400?text=Relative+clauses+with+'who'+/+'that'",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Sh vs Ch sounds",
+            "thumbnail_url": "https://placehold.co/600x400?text=Sh+vs+Ch+sounds",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Guess the job",
+            "thumbnail_url": "https://placehold.co/600x400?text=Guess+the+job",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U9",
+        "title": "Our Feelings",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Emotions (happy, sad, tired, hungry, thirsty)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Emotions+(happy,+sad,+tired,+hungry,+thirsty)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Adverbs of manner (quickly, slowly, happily)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Adverbs+of+manner+(quickly,+slowly,+happily)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Silent letters (k in knee, w in write)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Silent+letters+(k+in+knee,+w+in+write)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "How do they feel?",
+            "thumbnail_url": "https://placehold.co/600x400?text=How+do+they+feel?",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      },
+      {
+        "unit_id": "L2-U10",
+        "title": "Moving Up",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "Vocabulary",
+            "topic": "Review Movers Vocabulary",
+            "thumbnail_url": "https://placehold.co/600x400?text=Review+Movers+Vocabulary",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 2,
+            "type": "Grammar",
+            "topic": "Review Past, Comparatives, Future (Going to)",
+            "thumbnail_url": "https://placehold.co/600x400?text=Review+Past,+Comparatives,+Future+(Going+to)",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 3,
+            "type": "Phonics",
+            "topic": "Review difficult sounds",
+            "thumbnail_url": "https://placehold.co/600x400?text=Review+difficult+sounds",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          },
+          {
+            "id": 4,
+            "type": "Listening",
+            "topic": "Movers Practice Test",
+            "thumbnail_url": "https://placehold.co/600x400?text=Movers+Practice+Test",
+            "video_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+            "attachment_url": null
+          }
+        ]
+      }
+    ]
+  }
+]

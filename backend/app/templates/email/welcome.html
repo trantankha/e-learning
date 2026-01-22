@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f9fc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            color: #4F46E5;
+        }
+
+        .content {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4F46E5;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chào mừng đến với Kids English! 🎓</h1>
+        </div>
+        <div class="content">
+            <p>Xin chào <strong>{{ full_name }}</strong>,</p>
+            <p>Cảm ơn bạn đã tham gia cộng đồng Kids English. Chúng tôi rất vui được đồng hành cùng bạn trên con đường
+                chinh phục tiếng Anh.</p>
+            <p>Hãy bắt đầu bài học đầu tiên ngay hôm nay để nhận nhiều phần quà hấp dẫn nhé!</p>
+            <div style="text-align: center;">
+                <a href="{{ project_url }}" class="button">Bắt đầu học ngay</a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2026 Kids English E-Learning. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
