@@ -1,8 +1,5 @@
 'use client';
 
-import PaymentModal from "@/components/PaymentModal";
-import CheckoutModal from "@/components/CheckoutModal";
-import { OrderResponse } from "@/types/schema";
 import { useState } from "react";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
@@ -12,19 +9,13 @@ import axiosClient from "@/lib/axiosClient";
 import { ShopItem } from "@/types/schema";
 import { cn } from "@/lib/utils";
 import UserAvatar, { AvatarItem } from "@/components/UserAvatar";
+import { ShoppingCart, Check } from "lucide-react";
 
 export default function ShopPage() {
     const [items, setItems] = useState<ShopItem[]>([]);
     const [activeCategory, setActiveCategory] = useState<string>('all');
     const [loading, setLoading] = useState(true);
-    const { addRewards, setGems, gems, fetchProfile } = useStudentStore();
-
-    // Payment State
-    const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
-    const [currentOrder, setCurrentOrder] = useState<OrderResponse | null>(null);
-    const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
-    const [selectedGemPack, setSelectedGemPack] = useState<{ id: string, name: string, price: number, type: string } | null>(null);
-    const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+    const { addRewards, setGems, gems } = useStudentStore();
 
     useEffect(() => {
         fetchItems();
@@ -92,8 +83,6 @@ export default function ShopPage() {
                 if (i.id === item.id) return { ...i, is_equipped: true };
 
                 // If same category as equipped item, unequip it
-                // We rely on backend response or just client logic. 
-                // Backend ensures only 1 per category. Client should reflect that.
                 if (i.category === item.category && i.id !== item.id) {
                     return { ...i, is_equipped: false };
                 }
@@ -106,53 +95,6 @@ export default function ShopPage() {
             console.error("Equip failed", error);
             toast.error("Không thể thay đồ.");
         }
-    };
-
-    const handleBuyGems = (amount: number, price: number) => {
-        setSelectedGemPack({
-            id: `gem_${amount}`,
-            name: `Gói ${amount} Gems`,
-            price: price,
-            type: "gem_pack"
-        });
-        setIsCheckoutModalOpen(true);
-    };
-
-    const handleCheckoutConfirm = async (couponCode?: string) => {
-        if (!selectedGemPack) return;
-        setIsProcessingPayment(true);
-
-        try {
-            // Create Order
-            const res = await axiosClient.post<OrderResponse>("/payment/orders", {
-                amount: selectedGemPack.price,
-                description: `Mua ${selectedGemPack.name}`,
-                item_type: selectedGemPack.type,
-                item_id: selectedGemPack.id,
-                coupon_code: couponCode
-            });
-
-            setCurrentOrder(res.data);
-            setIsCheckoutModalOpen(false);
-            setIsPaymentModalOpen(true);
-        } catch (error) {
-            console.error("Failed to create order", error);
-            toast.error("Không thể tạo đơn hàng.");
-        } finally {
-            setIsProcessingPayment(false);
-        }
-    };
-
-    const handlePaymentSuccess = () => {
-        // Refresh profile to get new gems
-        fetchProfile();
-        toast.success("Nạp Gems thành công!", { icon: '💎' });
-        confetti({
-            particleCount: 150,
-            spread: 100,
-            origin: { y: 0.6 },
-            colors: ['#3b82f6', '#8b5cf6'] // Blue/Purple for Gems
-        });
     };
 
     if (loading) {
@@ -173,168 +115,162 @@ export default function ShopPage() {
             image_url: i.image_url || ''
         }));
 
+    const categories = [
+        { id: 'all', label: 'Tất cả', icon: '🌟' },
+        { id: 'hat', label: 'Mũ', icon: '🧢' },
+        { id: 'shirt', label: 'Áo', icon: '👕' },
+        { id: 'glasses', label: 'Kính', icon: '🕶️' },
+        { id: 'background', label: 'Nền', icon: '🏖️' },
+        { id: 'body', label: 'Cơ thể', icon: '🧍' },
+    ];
+
+    const filteredItems = items.filter(item => activeCategory === 'all' || item.category === activeCategory);
+
     return (
-        <div className="max-w-6xl mx-auto pb-20">
+        <div className="max-w-7xl mx-auto pb-20">
             {/* Header */}
-            <div className="mb-8 text-center bg-white p-8 rounded-3xl shadow-sm border-2 border-sky-100 relative overflow-hidden">
-                <div className="relative z-10">
-                    <h1 className="text-4xl font-black text-sky-800 mb-2">
-                        Cửa hàng & Tủ đồ 🎁
-                    </h1>
-                    <p className="text-slate-500 font-medium">
-                        Dùng Gems 💎 để đổi lấy những vật phẩm siêu ngầu nhé!
-                    </p>
-                </div>
-                <div className="absolute top-[-20px] left-[-20px] text-9xl opacity-10 rotate-[-12deg]">🛒</div>
+            <div className="mb-8 text-center">
+                <h1 className="text-4xl font-black text-slate-800 mb-2 drop-shadow-sm">
+                    Tủ Đồ & Cửa Hàng 🎁
+                </h1>
+                <p className="text-slate-500 font-medium text-lg">
+                    Dùng Gems đổi quà siêu ngầu bé nhé!
+                </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
-                {/* Left Column: Avatar Preview */}
-                <div className="lg:col-span-1">
-                    <div className="bg-white p-6 rounded-3xl border-2 border-indigo-100 shadow-sm sticky top-4 flex flex-col items-center">
-                        <h2 className="text-xl font-bold text-slate-700 mb-4">Avatar của bạn</h2>
-                        <UserAvatar items={equippedItems} size={250} />
-                        <div className="mt-4 text-center">
-                            <p className="text-sm text-slate-400">Thay đồ để xem trước nhé!</p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                {/* Left Column (4/12) - Sticky Avatar */}
+                <div className="lg:col-span-4 sticky top-4 z-10 order-1 lg:order-none">
+                    <div className="bg-white p-6 rounded-[2.5rem] border-4 border-indigo-100 shadow-xl flex flex-col items-center">
+                        <div className="w-full bg-indigo-50 rounded-3xl p-4 mb-4 text-center">
+                            <h2 className="text-xl font-bold text-indigo-700">Avatar Của Bé</h2>
+                        </div>
+
+                        <div className="relative mb-6 transform hover:scale-105 transition-transform duration-300">
+                            <UserAvatar items={equippedItems} size={280} className="shadow-2xl border-4 border-white" />
+                        </div>
+
+                        <div className="w-full grid grid-cols-2 gap-3">
+                            <div className="bg-orange-50 p-3 rounded-2xl border border-orange-100 text-center">
+                                <p className="text-xs text-orange-400 font-bold uppercase mb-1">Đã sở hữu</p>
+                                <p className="text-2xl font-black text-orange-600">{items.filter(i => i.is_owned).length}</p>
+                            </div>
+                            <div className="bg-sky-50 p-3 rounded-2xl border border-sky-100 text-center">
+                                <p className="text-xs text-sky-400 font-bold uppercase mb-1">Đang mặc</p>
+                                <p className="text-2xl font-black text-sky-600">{equippedItems.length}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Right Column: Shop Items */}
-                <div className="lg:col-span-3">
-                    {/* Gem Packs Section */}
-                    <div className="mb-10 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-3xl border border-blue-100">
-                        <h2 className="text-2xl font-bold text-slate-700 mb-6 flex items-center gap-2">
-                            <span>💎</span> Nạp thêm Gems
-                        </h2>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {[
-                                { gems: 100, price: 10000, color: "bg-white border-blue-200 text-blue-600" },
-                                { gems: 500, price: 45000, color: "bg-white border-purple-200 text-purple-600" },
-                                { gems: 1000, price: 80000, color: "bg-white border-pink-200 text-pink-600" },
-                                { gems: 2000, price: 150000, color: "bg-white border-yellow-200 text-yellow-600" },
-                            ].map((pack) => (
-                                <div key={pack.gems} className={`border-2 rounded-2xl p-4 flex flex-col items-center cursor-pointer hover:scale-105 transition-transform shadow-sm ${pack.color}`}
-                                    onClick={() => handleBuyGems(pack.gems, pack.price)}>
-                                    <div className="text-3xl mb-1">💎</div>
-                                    <div className="font-bold text-lg text-slate-700">{pack.gems}</div>
-                                    <button className="bg-slate-50 border hover:bg-slate-100 text-slate-600 font-bold py-1 px-3 rounded-full text-xs mt-2">
-                                        {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(pack.price)}
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                {/* Right Column (8/12) - Shop Items */}
+                <div className="lg:col-span-8">
 
-                    <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-2xl font-bold text-slate-700 flex items-center gap-2">
-                            <span>🛍️</span> Vật phẩm đổi thưởng
-                        </h2>
-                    </div>
-
-                    {/* Category Tabs */}
-                    <div className="flex flex-wrap gap-3 mb-8">
-                        {[
-                            { id: 'all', label: 'Tất cả', icon: '🌟' },
-                            { id: 'hat', label: 'Mũ', icon: '🧢' },
-                            { id: 'shirt', label: 'Áo', icon: '👕' },
-                            { id: 'glasses', label: 'Kính', icon: '🕶️' },
-                            { id: 'background', label: 'Nền', icon: '🏖️' },
-                            { id: 'body', label: 'Cơ thể', icon: '🧍' },
-                        ].map((tab) => (
+                    {/* Filter Tabs (Pills) */}
+                    <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
+                        {categories.map((tab) => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveCategory(tab.id as any)}
                                 className={cn(
-                                    "px-5 py-2.5 rounded-2xl font-bold text-sm transition-all flex items-center gap-2",
+                                    "px-6 py-3 rounded-full font-bold text-sm transition-all flex items-center gap-2 border-2",
                                     activeCategory === tab.id
-                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-200 scale-105"
-                                        : "bg-white text-slate-500 border-2 border-slate-100 hover:border-indigo-200 hover:text-indigo-500"
+                                        ? "bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-200 scale-105"
+                                        : "bg-white text-slate-500 border-slate-200 hover:border-indigo-300 hover:text-indigo-500 hover:bg-indigo-50"
                                 )}
                             >
-                                <span>{tab.icon}</span>
+                                <span className="text-lg">{tab.icon}</span>
                                 <span>{tab.label}</span>
                             </button>
                         ))}
                     </div>
 
+                    {/* Items Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {items
-                            .filter(item => activeCategory === 'all' || item.category === activeCategory)
-                            .map((item) => (
-                                <div
-                                    key={item.id}
-                                    className={cn(
-                                        "relative bg-white rounded-3xl p-6 border-2 flex flex-col items-center transition-all duration-300",
-                                        item.is_equipped
-                                            ? "border-indigo-500 bg-indigo-50 shadow-md ring-2 ring-indigo-200"
-                                            : item.is_owned
-                                                ? "border-green-200 bg-green-50/50"
-                                                : "border-slate-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-1"
-                                    )}
-                                >
-                                    {/* Image/Icon */}
-                                    <div className="w-28 h-28 rounded-2xl bg-white flex items-center justify-center text-6xl shadow-sm mb-4 border border-slate-100 overflow-hidden p-2">
-                                        {item.image_url ?
-                                            <img src={item.image_url} alt={item.name} className="w-full h-full object-contain" />
-                                            : "🎁"
-                                        }
+                        {filteredItems.map((item) => (
+                            <div
+                                key={item.id}
+                                className={cn(
+                                    "relative bg-white rounded-[2rem] p-5 border-b-[6px] transition-all duration-300 flex flex-col items-center group",
+                                    item.is_equipped
+                                        ? "border-indigo-500 ring-2 ring-indigo-200 shadow-xl shadow-indigo-100"
+                                        : item.is_owned
+                                            ? "border-green-400/50 shadow-md"
+                                            : "border-slate-200 hover:border-orange-300 hover:shadow-xl hover:-translate-y-2"
+                                )}
+                            >
+                                {/* Status Badge */}
+                                {item.is_equipped && (
+                                    <div className="absolute top-4 right-4 bg-indigo-500 text-white p-1.5 rounded-full shadow-md z-10">
+                                        <Check size={16} strokeWidth={4} />
                                     </div>
+                                )}
 
-                                    <h3 className="text-lg font-bold text-slate-700 mb-1 text-center leading-tight min-h-[3rem] flex items-center justify-center">{item.name}</h3>
+                                {/* Image Container */}
+                                <div className="w-full aspect-square rounded-3xl bg-slate-50 mb-4 flex items-center justify-center p-4 relative overflow-hidden border-2 border-slate-100 group-hover:bg-white transition-colors">
+                                    {item.image_url ? (
+                                        <img
+                                            src={item.image_url}
+                                            alt={item.name}
+                                            className="w-full h-full object-contain filter drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
+                                            onError={(e) => {
+                                                const target = e.target as HTMLImageElement;
+                                                target.onerror = null;
+                                                target.src = "https://cdn-icons-png.flaticon.com/512/679/679821.png"; // Fallback box icon
+                                            }}
+                                        />
+                                    ) : (
+                                        <div className="text-6xl animate-bounce">🎁</div>
+                                    )}
+                                </div>
 
-                                    <div className="mt-auto w-full pt-4">
-                                        {item.is_owned ? (
-                                            item.is_equipped ? (
-                                                <button
-                                                    disabled
-                                                    className="w-full py-3 rounded-2xl bg-indigo-500 text-white font-bold cursor-default opacity-90 shadow-lg shadow-indigo-200"
-                                                >
-                                                    Đang mặc ✨
-                                                </button>
-                                            ) : (
-                                                <button
-                                                    onClick={() => handleEquipItem(item)}
-                                                    className="w-full py-3 rounded-2xl bg-green-100 text-green-700 font-bold hover:bg-green-200 transition border-2 border-green-200"
-                                                >
-                                                    Mặc ngay 👕
-                                                </button>
-                                            )
+                                <h3 className="text-lg font-bold text-slate-700 mb-2 text-center line-clamp-1 w-full" title={item.name}>
+                                    {item.name}
+                                </h3>
+
+                                <div className="mt-auto w-full pt-2">
+                                    {item.is_owned ? (
+                                        item.is_equipped ? (
+                                            <button
+                                                disabled
+                                                className="w-full py-3 rounded-2xl bg-indigo-100 text-indigo-600 font-extrabold cursor-default border-2 border-indigo-200"
+                                            >
+                                                Đang Mặc ✨
+                                            </button>
                                         ) : (
                                             <button
-                                                onClick={() => handleBuyItem(item)}
-                                                className="w-full py-3 rounded-2xl bg-orange-500 text-white font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition flex justify-center items-center gap-2 transform active:scale-95"
+                                                onClick={() => handleEquipItem(item)}
+                                                className="w-full py-3 rounded-2xl bg-white text-green-600 font-bold hover:bg-green-50 transition border-2 border-green-200 hover:border-green-400"
                                             >
-                                                <span>Mua</span>
-                                                <div className="flex items-center gap-1 bg-white/20 px-2 py-0.5 rounded-lg">
-                                                    <span>💎</span>
-                                                    <span>{item.price}</span>
-                                                </div>
+                                                Mặc Thử 👕
                                             </button>
-                                        )}
-                                    </div>
+                                        )
+                                    ) : (
+                                        <button
+                                            onClick={() => handleBuyItem(item)}
+                                            className="w-full py-3 rounded-2xl bg-orange-500 text-white font-bold shadow-lg shadow-orange-200 hover:bg-orange-400 hover:shadow-orange-300 transition-all active:scale-95 flex items-center justify-center gap-2"
+                                        >
+                                            <div className="bg-white/20 p-1 rounded-lg">
+                                                <ShoppingCart size={18} />
+                                            </div>
+                                            <span>{item.price}</span>
+                                            <span className="text-xs">GEM</span>
+                                        </button>
+                                    )}
                                 </div>
-                            ))}
+                            </div>
+                        ))}
+
+                        {filteredItems.length === 0 && (
+                            <div className="col-span-full py-20 text-center text-slate-400">
+                                <p className="text-6xl mb-4">🏜️</p>
+                                <p className="font-medium">Chưa có vật phẩm nào ở đây cả!</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
-
-            {currentOrder && (
-                <PaymentModal
-                    isOpen={isPaymentModalOpen}
-                    onClose={() => setIsPaymentModalOpen(false)}
-                    orderData={currentOrder}
-                    onSuccess={handlePaymentSuccess}
-                />
-            )}
-
-            <CheckoutModal
-                isOpen={isCheckoutModalOpen}
-                onClose={() => setIsCheckoutModalOpen(false)}
-                item={selectedGemPack}
-                onConfirm={handleCheckoutConfirm}
-                isLoading={isProcessingPayment}
-            />
         </div>
     );
 }

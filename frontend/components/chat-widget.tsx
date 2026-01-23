@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { useAuth } from "@/hooks/useAuth";
 
 interface Message {
     id: string;
@@ -49,7 +50,9 @@ const processResponse = (response: string): string => {
 };
 
 export default function ChatWidget() {
+    const { isAuthenticated } = useAuth(false);
     const [isOpen, setIsOpen] = useState(false);
+
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState<Message[]>([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -58,13 +61,14 @@ export default function ChatWidget() {
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     // Danh sách câu hỏi nhanh cho bé
+    // Danh sách câu hỏi nhanh cho bé (Học Tiếng Anh)
     const QUICK_QUESTIONS = [
-        "Kể chuyện cổ tích đi! 📖",
-        "Đố thỏ biết 1+1 bằng mấy? 🔢",
-        "Tại sao trời lại mưa? 🌧️",
-        "Hát một bài hát đi! 🎵",
-        "Thỏ thích măm gì nhất? 🥕",
-        "Kể chuyện hài cho bé nghe nào 😂"
+        "Dạy tớ 5 từ vựng về Động Vật! �",
+        "Hát bài hát tiếng Anh vui nhộn đi! 🎵",
+        "Kể chuyện ngắn bằng tiếng Anh dễ hiểu! 📖",
+        "Đố tớ các từ chỉ Màu Sắc nhé! �",
+        "Làm sao để giới thiệu bản thân bằng tiếng Anh? 👋",
+        "Dịch giúp tớ câu 'I love learning English' ❤️"
     ];
 
     const toggleChat = () => {
@@ -78,6 +82,8 @@ export default function ChatWidget() {
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
+
+    if (!isAuthenticated) return null;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);

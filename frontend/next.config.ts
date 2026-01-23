@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         port: '9000',
         pathname: '/e-learning/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'qr.sepay.vn',
+        pathname: '/img/**',
+      },
     ],
   },
 };

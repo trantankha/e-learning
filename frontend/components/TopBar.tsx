@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useStudentStore } from "@/stores/studentStore";
 import { useAuth } from "@/hooks/useAuth";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Plus } from "lucide-react";
 import { MENU_ITEMS } from "./Sidebar";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,11 +11,13 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { authService } from "@/services/auth";
 import toast from "react-hot-toast";
+import GemModal from "./GemModal";
 
 export function TopBar() {
     const { isAuthenticated } = useAuth(true);
     const { fullName, gems, stars, avatarUrl, fetchProfile } = useStudentStore();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isGemModalOpen, setIsGemModalOpen] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -60,9 +62,18 @@ export function TopBar() {
                 {/* Right: Stats & Profile */}
                 <div className="flex items-center gap-3 md:gap-6">
                     {/* Gems */}
-                    <div className="flex items-center gap-1.5 md:gap-2 bg-sky-50 px-2 md:px-3 py-1 md:py-1.5 rounded-full border border-sky-100">
-                        <span className="text-lg md:text-2xl animate-pulse">💎</span>
-                        <span className="font-black text-sky-600 text-base md:text-lg">{gems}</span>
+                    <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1.5 md:gap-2 bg-sky-50 px-2 md:px-3 py-1 md:py-1.5 rounded-full border border-sky-100">
+                            <span className="text-lg md:text-2xl animate-pulse">💎</span>
+                            <span className="font-black text-sky-600 text-base md:text-lg">{gems}</span>
+                        </div>
+                        <button
+                            onClick={() => setIsGemModalOpen(true)}
+                            className="bg-sky-100 hover:bg-sky-200 text-sky-600 rounded-full p-1 transition-colors"
+                            aria-label="Buy Gems"
+                        >
+                            <Plus size={16} strokeWidth={3} />
+                        </button>
                     </div>
 
                     {/* Stars */}
@@ -148,6 +159,9 @@ export function TopBar() {
                     </div>
                 </div>
             )}
+
+            {/* Gem Modal Triggered from Header */}
+            <GemModal isOpen={isGemModalOpen} onClose={() => setIsGemModalOpen(false)} />
         </>
     );
 }

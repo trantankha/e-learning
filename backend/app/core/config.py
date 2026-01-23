@@ -31,11 +31,11 @@ class Settings(BaseSettings):
     MINIO_SECRET_KEY: str = "minio123"
     BUCKET_NAME: str = "e-learning"
 
-    # Bank Transfer
-    BANK_ID: str = "MB"
-    ACCOUNT_NO: str = "0000000000"
-    ACCOUNT_NAME: str = "KIDS ENGLISH"
-
+    # SePay/Casso VietQR Payment
+    SEPAY_API_KEY: str = "your-sepay-api-key"
+    SEPAY_WEBHOOK_SECRET: str = "your-webhook-secret-key"
+    PAYMENT_TOLERANCE_AMOUNT: float = 1000  # Sai số cho phép (VND)
+    
     # Email
     MAIL_USERNAME: str = "your-email@gmail.com"
     MAIL_PASSWORD: str = "your-app-password"

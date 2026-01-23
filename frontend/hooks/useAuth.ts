@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { authService } from "@/services/auth";
 
 export function useAuth(requireAuth = true) {
     const router = useRouter();
+    const pathname = usePathname();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -16,12 +17,12 @@ export function useAuth(requireAuth = true) {
             router.push("/login");
         }
 
-        // If we are on auth pages (login/register) and HAVE token, redirect to dashboard
-        if (!requireAuth && hasToken) {
-            router.push("/dashboard");
-        }
+        // We remove the auto-redirect to dashboard here because it causes issues for global components
+        // that use useAuth(false) just to check status (like ChatWidget).
+        // The redirection logic should be handled by specific pages (like Login/Register pages)
+        // or a dedicated HOC/Layout wrapper, not this hook when requireAuth is false.
 
-    }, [router, requireAuth]);
+    }, [router, pathname, requireAuth]);
 
     return { isAuthenticated, loading };
 }

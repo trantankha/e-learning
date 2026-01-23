@@ -8,3 +8,7 @@ from .gamification import Item, UserItem, PointLog
 from .order import Order
 from .coupon import Coupon
 from .chat import ChatHistory
+from .user_course import UserCourse
+from .gem_pack import GemPack
+from .vocabulary import Vocabulary
+from .srs import UserWordProgress

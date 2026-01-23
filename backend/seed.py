@@ -5,6 +5,7 @@ from app.core.database import SessionLocal, init_db, engine, Base
 from app.models.user import User, StudentProfile
 from app.models.curriculum import Course, Unit, Lesson, Question
 from app.models.shop import ShopItem
+from app.models.gem_pack import GemPack
 from app.models.enums import UserRole, CourseLevel, LessonType, ItemCategory
 from app.models.vocabulary import Vocabulary
 from app.models.srs import UserWordProgress
@@ -223,6 +224,65 @@ def seed_vocabulary(db):
     except Exception as e:
         print(f"Error seeding vocabulary: {e}")
 
+def seed_gem_packs(db):
+    """Seed available gem packs for purchase"""
+    print("\n--- Seeding Gem Packs ---")
+    
+    gem_packs_data = [
+        {
+            "name": "Gói 1000 Gem",
+            "description": "Bắt đầu nhỏ",
+            "gem_amount": 1000,
+            "price_vnd": 50000,
+            "bonus_gem_percent": 0,
+            "order_index": 1
+        },
+        {
+            "name": "Gói 5000 Gem",
+            "description": "Tiết kiệm hơn",
+            "gem_amount": 5000,
+            "price_vnd": 200000,
+            "bonus_gem_percent": 5,
+            "order_index": 2
+        },
+        {
+            "name": "Gói 10000 Gem",
+            "description": "Rất tiết kiệm",
+            "gem_amount": 10000,
+            "price_vnd": 350000,
+            "bonus_gem_percent": 10,
+            "order_index": 3
+        },
+        {
+            "name": "Gói 25000 Gem",
+            "description": "Siêu tiết kiệm",
+            "gem_amount": 25000,
+            "price_vnd": 800000,
+            "bonus_gem_percent": 15,
+            "order_index": 4
+        },
+        {
+            "name": "Gói 50000 Gem",
+            "description": "Gói VIP",
+            "gem_amount": 50000,
+            "price_vnd": 1400000,
+            "bonus_gem_percent": 20,
+            "order_index": 5
+        }
+    ]
+    
+    try:
+        for pack_data in gem_packs_data:
+            existing = db.query(GemPack).filter(GemPack.name == pack_data["name"]).first()
+            if not existing:
+                gem_pack = GemPack(**pack_data, is_active=True)
+                db.add(gem_pack)
+                print(f"Created: {pack_data['name']} - {pack_data['gem_amount']} gems - {pack_data['price_vnd']} VND")
+        
+        db.commit()
+    except Exception as e:
+        print(f"Error seeding gem packs: {e}")
+
 def seed_all():
     print("🚀 Starting Complete 'Boom' Seeding 🚀")
     
@@ -237,6 +297,7 @@ def seed_all():
         seed_users(db)
         seed_curriculum(db)
         seed_shop(db)
+        seed_gem_packs(db)
         seed_vocabulary(db)
         print("\n✅ All seeding completed successfully! ✅")
     except Exception as e:

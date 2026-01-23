@@ -65,10 +65,17 @@
 - Thực hành phát âm với phản hồi
 - Flashcard thích ứng (SRS)
 
-### 🛍️ Cửa Hàng In-App
+### 🛍️ Cửa Hàng In-App & GemShop
 - Mua các khóa học bổ sung
 - Đặc quyền người dùng cao cấp
 - Quản lý đơn hàng và thanh toán
+
+### 💎 GemShop - Thanh Toán VietQR/SePay
+- **Gem Packs**: 5 gói từ 1K đến 50K gems với bonus từ 0% đến 20%
+- **Mã giảm giá (Coupon)**: Hỗ trợ mã giảm giá tự động kiểm tra
+- **VietQR Payment**: QR code tự động sinh, thanh toán qua ngân hàng
+- **Tự động xử lý**: Webhook từ SePay cập nhật tự động, gems được cộng ngay
+- **Email xác nhận**: Gửi tự động sau khi thanh toán thành công
 
 ---
 

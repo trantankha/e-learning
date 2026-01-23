@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Dict, Any
 from datetime import datetime
 
 class OrderCreate(BaseModel):
@@ -26,3 +26,59 @@ class WebhookPayload(BaseModel):
     content: str
     amount: float
     # ... other fields
+
+
+# ============ SePay/Casso VietQR Webhook Schemas ============
+
+class SePayWebhookData(BaseModel):
+    """
+    Schema cho webhook từ SePay/Casso.
+    
+    Ví dụ data từ SePay:
+    {
+        "id": "abc123",
+        "gateway": "SePay",
+        "transactionDate": "2024-01-22 10:30:45",
+        "accountNumber": "1234567890",
+        "subAccount": null,
+        "transferAmount": 500000,
+        "transferContent": "DH12345",
+        "referenceCode": "ref123",
+        "transactionType": "IN",
+        "description": "VCB-0021234567890-240122-103045"
+    }
+    """
+    id: str
+    gateway: str  # "SePay", "Casso", etc.
+    transactionDate: str
+    accountNumber: str
+    subAccount: Optional[str] = None
+    transferAmount: float
+    transferContent: str  # Nội dung chuyển khoản (chứa ORDER_ID)
+    referenceCode: str
+    transactionType: Optional[str] = None
+    description: Optional[str] = None
+    
+    class Config:
+        # Allow extra fields từ SePay
+        extra = "allow"
+
+
+class SePayWebhookRequest(BaseModel):
+    """
+    Request body từ SePay webhook.
+    """
+    data: SePayWebhookData
+    
+    class Config:
+        extra = "allow"
+
+
+class SePayWebhookResponse(BaseModel):
+    """
+    Response cho SePay webhook.
+    """
+    success: bool
+    message: Optional[str] = None
+    order_id: Optional[str] = None
+    error_code: Optional[str] = None

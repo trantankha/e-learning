@@ -122,7 +122,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12 text-center">
-        <p className="font-bold text-slate-500">© 2024 Kids English E-Learning. Made with headers ❤️</p>
+        <p className="font-bold text-slate-500">© 2026 Kids English E-Learning. Made with headers ❤️</p>
       </footer>
     </main>
   );

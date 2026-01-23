@@ -8,7 +8,9 @@ from typing import Any
 from app.models.order import Order
 from app.models.coupon import Coupon
 from app.core import security
-from wtforms import PasswordField
+from wtforms import PasswordField, SelectField
+
+from app.models.enums import UserRole, CourseLevel, LessonType, DiscountType
 
 class UserAdmin(ModelView, model=User):
     column_list = [User.id, User.email, User.full_name, User.role, User.student_profile, User.is_active]
@@ -20,7 +22,10 @@ class UserAdmin(ModelView, model=User):
 
     form_columns = [User.email, User.hashed_password, User.full_name, User.role, User.is_active]
     
-    form_overrides = dict(hashed_password=PasswordField)
+    form_overrides = dict(
+        hashed_password=PasswordField,
+        role=SelectField
+    )
     
     form_args = dict(
         hashed_password=dict(
@@ -32,10 +37,15 @@ class UserAdmin(ModelView, model=User):
             }
         ),
         email=dict(render_kw={"autocomplete": "off", "class": "form-control"}),
-        full_name=dict(render_kw={"autocomplete": "off", "class": "form-control"})
+        full_name=dict(render_kw={"autocomplete": "off", "class": "form-control"}),
+        role=dict(
+            choices=[(e.value, e.value) for e in UserRole],
+            label="Role",
+            coerce=str
+        )
     )
 
-    async def on_model_change(self, data: dict, model: Any, is_created: bool, request: Any) -> None:
+    async def on_model_change(self, data: dict, model: Any, is_created: bool, request: Any = None) -> None:
         raw_password = data.get("hashed_password")
         
         if raw_password:
@@ -47,6 +57,13 @@ class UserAdmin(ModelView, model=User):
         else:
              # Edit mode and empty password field -> Do not update/touch the field
              if "hashed_password" in data: del data["hashed_password"]
+             
+        # Handle Enum conversion for Role
+        if "role" in data and isinstance(data["role"], str):
+             try:
+                 data["role"] = UserRole(data["role"])
+             except ValueError:
+                 pass
 
 class CourseAdmin(ModelView, model=Course):
     column_list = [Course.id, Course.title, Course.level]
@@ -54,6 +71,22 @@ class CourseAdmin(ModelView, model=Course):
     can_edit = True
     can_delete = True
     icon = "fa-solid fa-book"
+    
+    form_overrides = dict(level=SelectField)
+    form_args = dict(
+        level=dict(
+            choices=[(e.value, e.value) for e in CourseLevel],
+            label="Level",
+            coerce=str
+        )
+    )
+
+    async def on_model_change(self, data: dict, model: Any, is_created: bool, request: Any = None) -> None:
+        if "level" in data and isinstance(data["level"], str):
+             try:
+                 data["level"] = CourseLevel(data["level"])
+             except ValueError:
+                 pass
 
 class UnitAdmin(ModelView, model=Unit):
     column_list = [Unit.id, Unit.title, Unit.course_id, Unit.order_index]
@@ -71,7 +104,7 @@ from wtforms import FileField
 class LessonAdmin(ModelView, model=Lesson):
     column_list = [Lesson.id, Lesson.title, Lesson.unit, Lesson.lesson_type, Lesson.pronunciation_word]
     
-    # Explicitly list all fields,    # Explicitly list all fields
+    # Explicitly list all fields
     form_columns = [
         Lesson.title, 
         Lesson.unit, 
@@ -89,10 +122,12 @@ class LessonAdmin(ModelView, model=Lesson):
     icon = "fa-solid fa-graduation-cap"
     
     # Override URL fields with FileField so they show as Upload inputs
+    # Also override lesson_type with SelectField
     form_overrides = dict(
         video_url=FileField,
         thumbnail_url=FileField,
-        attachment_url=FileField
+        attachment_url=FileField,
+        lesson_type=SelectField
     )
     
     # Label them nicely
@@ -100,10 +135,15 @@ class LessonAdmin(ModelView, model=Lesson):
         video_url=dict(label="Upload Video"),
         thumbnail_url=dict(label="Upload Thumbnail"),
         attachment_url=dict(label="Upload Attachment"),
-        order_index=dict(label="Display Order (Priority)")
+        order_index=dict(label="Display Order (Priority)"),
+        lesson_type=dict(
+            choices=[(e.value, e.value) for e in LessonType],
+            label="Lesson Type",
+            coerce=str
+        )
     )
 
-    async def on_model_change(self, data: dict, model: Any, is_created: bool, request: Any) -> None:
+    async def on_model_change(self, data: dict, model: Any, is_created: bool, request: Any = None) -> None:
         
         async def process_file(field_name):
             file_obj = data.get(field_name)
@@ -124,6 +164,13 @@ class LessonAdmin(ModelView, model=Lesson):
         await process_file('video_url')
         await process_file('thumbnail_url')
         await process_file('attachment_url')
+        
+        # Handle Enum conversion
+        if "lesson_type" in data and isinstance(data["lesson_type"], str):
+             try:
+                 data["lesson_type"] = LessonType(data["lesson_type"])
+             except ValueError:
+                 pass
 
 class QuestionAdmin(ModelView, model=Question):
     column_list = [Question.id, Question.text, Question.lesson_id]
@@ -149,3 +196,24 @@ class CouponAdmin(ModelView, model=Coupon):
     can_edit = True
     can_delete = True
     icon = "fa-solid fa-ticket"
+    
+    # Explicitly handle Enum field for stability
+    form_overrides = dict(
+        discount_type=SelectField
+    )
+    
+    form_args = dict(
+        discount_type=dict(
+            # Pass simple values to avoid WTForms widget unpacking issues
+            choices=[(e.value, e.value) for e in DiscountType],
+            label="Discount Type",
+            coerce=str
+        ) 
+    )
+
+    async def on_model_change(self, data: dict, model: Any, is_created: bool, request: Any = None) -> None:
+        if "discount_type" in data and isinstance(data["discount_type"], str):
+             try:
+                 data["discount_type"] = DiscountType(data["discount_type"])
+             except ValueError:
+                 pass

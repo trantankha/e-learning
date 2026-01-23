@@ -57,7 +57,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({ items = [], size = 300, classNa
 
     return (
         <div
-            className={`relative overflow-hidden rounded-xl border-2 border-gray-100 bg-white shadow-sm ${className}`}
+            className={`relative overflow-hidden rounded-[2rem] border-2 border-gray-100 bg-white shadow-sm ${className}`}
             style={{ width: size, height: size }}
         >
             {equippedItems.map((item) => (

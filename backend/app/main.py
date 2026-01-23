@@ -9,6 +9,7 @@ from app.admin_auth import admin_auth
 from app.admin_views import UserAdmin, CourseAdmin, UnitAdmin, LessonAdmin, QuestionAdmin, OrderAdmin, CouponAdmin
 
 init_db()
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(

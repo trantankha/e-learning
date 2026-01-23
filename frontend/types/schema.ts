@@ -109,6 +109,31 @@ export interface OrderResponse {
     coupon_code?: string;
 }
 
+export interface GemOrderResponse {
+    order_id: string;
+    gem_pack_id: number;
+    gem_amount: number;
+    total_gems: number;
+    original_price: number;
+    discount_amount: number;
+    final_amount: number;
+    status: string;
+    qr_url: string;
+    coupon_code?: string;
+}
+
+export interface GemPackResponse {
+    id: number;
+    name: string;
+    description?: string;
+    gem_amount: number;
+    bonus_gem_percent: number;
+    total_gems: number;
+    price_vnd: number;
+    is_active: boolean;
+    order_index: number;
+}
+
 export interface CreateOrderRequest {
     amount: number;
     description?: string;

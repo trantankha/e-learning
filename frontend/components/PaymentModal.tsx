@@ -1,22 +1,59 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import toast from 'react-hot-toast';
-import { OrderResponse } from '@/types/schema';
+import { OrderResponse, GemOrderResponse } from '@/types/schema';
 import axiosClient from '@/lib/axiosClient';
 import { Loader2, X, CheckCircle } from 'lucide-react';
+
+type OrderType = OrderResponse | GemOrderResponse;
 
 interface PaymentModalProps {
     isOpen: boolean;
     onClose: () => void;
-    orderData: OrderResponse | null;
+    orderData: OrderType | null;
     onSuccess: () => void;
 }
 
 const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, orderData, onSuccess }) => {
     const [status, setStatus] = useState<string>('pending');
+    const [qrUrl, setQrUrl] = useState<string>('');
+
+    // Helper function to get amount for display
+    const getDisplayAmount = (order: OrderType | null): number => {
+        if (!order) return 0;
+        if ('amount' in order) {
+            return order.amount;
+        }
+        return order.final_amount;
+    };
+
+    // Generate SePay QR URL
+    const generateSePayQrUrl = (order: OrderType | null): string => {
+        if (!order) return '';
+
+        const bankId = process.env.NEXT_PUBLIC_BANK_ID || 'CTG';
+        const accountNo = process.env.NEXT_PUBLIC_ACCOUNT_NO || '';
+        const amount = getDisplayAmount(order);
+        const description = `DH${order.order_id}`;
+
+        const params = new URLSearchParams({
+            bank: bankId,
+            acc: accountNo,
+            template: 'compact',
+            amount: amount.toString(),
+            des: description,
+        });
+
+        return `https://qr.sepay.vn/img?${params.toString()}`;
+    };
 
     useEffect(() => {
         if (isOpen && orderData) {
             setStatus(orderData.status);
+            // Generate QR URL từ SePay
+            const qrUrl = generateSePayQrUrl(orderData);
+            setQrUrl(qrUrl);
+
             // Polling mechanism
             const interval = setInterval(async () => {
                 if (status === 'paid') return;
@@ -44,6 +81,8 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, orderData,
 
     if (!isOpen || !orderData) return null;
 
+    const displayAmount = getDisplayAmount(orderData);
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md p-6 relative animate-in fade-in zoom-in duration-300">
@@ -65,11 +104,15 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, orderData,
                     <div className="flex flex-col items-center">
                         <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-1 rounded-xl shadow-lg">
                             <div className="bg-white p-2 rounded-lg">
-                                <img
-                                    src={orderData.qr_url}
-                                    alt="VietQR Payment"
-                                    className="w-64 h-auto rounded-md"
-                                />
+                                {qrUrl && (
+                                    <Image
+                                        src={qrUrl}
+                                        alt="SePay QR Payment"
+                                        width={256}
+                                        height={256}
+                                        className="rounded-md"
+                                    />
+                                )}
                             </div>
                         </div>
 
@@ -81,7 +124,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, orderData,
                             <div className="flex justify-between">
                                 <span className="text-gray-600">Số tiền:</span>
                                 <span className="font-bold text-lg text-green-600">
-                                    {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(orderData.amount)}
+                                    {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(displayAmount)}
                                 </span>
                             </div>
                         </div>

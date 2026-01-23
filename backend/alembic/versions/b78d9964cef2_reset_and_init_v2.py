@@ -1,8 +1,8 @@
-"""Initial migration
+"""reset_and_init_v2
 
-Revision ID: 9a7d9894daa7
+Revision ID: b78d9964cef2
 Revises: 
-Create Date: 2026-01-20 15:06:32.870873
+Create Date: 2026-01-22 03:22:39.997767
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '9a7d9894daa7'
+revision: str = 'b78d9964cef2'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -42,6 +42,20 @@ def upgrade() -> None:
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_courses_id'), 'courses', ['id'], unique=False)
+    op.create_table('gem_packs',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('name', sa.String(), nullable=False),
+    sa.Column('description', sa.String(), nullable=True),
+    sa.Column('gem_amount', sa.Integer(), nullable=False),
+    sa.Column('price_vnd', sa.Float(), nullable=False),
+    sa.Column('bonus_gem_percent', sa.Float(), nullable=True),
+    sa.Column('is_active', sa.Boolean(), nullable=True),
+    sa.Column('order_index', sa.Integer(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
+    sa.Column('updated_at', sa.DateTime(), nullable=True),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_index(op.f('ix_gem_packs_id'), 'gem_packs', ['id'], unique=False)
     op.create_table('items',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(), nullable=False),
@@ -79,6 +93,16 @@ def upgrade() -> None:
     op.create_index(op.f('ix_users_email'), 'users', ['email'], unique=True)
     op.create_index(op.f('ix_users_id'), 'users', ['id'], unique=False)
     op.create_index(op.f('ix_users_referral_code'), 'users', ['referral_code'], unique=True)
+    op.create_table('chat_history',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('role', sa.String(), nullable=False),
+    sa.Column('content', sa.Text(), nullable=False),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_index(op.f('ix_chat_history_id'), 'chat_history', ['id'], unique=False)
     op.create_table('orders',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
@@ -143,6 +167,25 @@ def upgrade() -> None:
     sa.UniqueConstraint('user_id')
     )
     op.create_index(op.f('ix_student_profiles_id'), 'student_profiles', ['id'], unique=False)
+    op.create_table('user_courses',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('course_id', sa.Integer(), nullable=False),
+    sa.Column('purchased_at', sa.DateTime(), nullable=False),
+    sa.Column('activated_at', sa.DateTime(), nullable=True),
+    sa.Column('is_active', sa.Boolean(), nullable=True),
+    sa.Column('order_id', sa.Integer(), nullable=True),
+    sa.Column('access_expires_at', sa.DateTime(), nullable=True),
+    sa.Column('notes', sa.String(), nullable=True),
+    sa.ForeignKeyConstraint(['course_id'], ['courses.id'], ),
+    sa.ForeignKeyConstraint(['order_id'], ['orders.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_index(op.f('ix_user_courses_course_id'), 'user_courses', ['course_id'], unique=False)
+    op.create_index(op.f('ix_user_courses_id'), 'user_courses', ['id'], unique=False)
+    op.create_index(op.f('ix_user_courses_is_active'), 'user_courses', ['is_active'], unique=False)
+    op.create_index(op.f('ix_user_courses_user_id'), 'user_courses', ['user_id'], unique=False)
     op.create_table('inventory',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('student_id', sa.Integer(), nullable=False),
@@ -221,11 +264,42 @@ def upgrade() -> None:
     sa.UniqueConstraint('lesson_id')
     )
     op.create_index(op.f('ix_video_materials_id'), 'video_materials', ['id'], unique=False)
+    op.create_table('vocabularies',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('word', sa.String(), nullable=False),
+    sa.Column('meaning', sa.String(), nullable=True),
+    sa.Column('pronunciation', sa.String(), nullable=True),
+    sa.Column('example_sentence', sa.Text(), nullable=True),
+    sa.Column('image_url', sa.String(), nullable=True),
+    sa.Column('audio_url', sa.String(), nullable=True),
+    sa.Column('lesson_id', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['lesson_id'], ['lessons.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_index(op.f('ix_vocabularies_id'), 'vocabularies', ['id'], unique=False)
+    op.create_index(op.f('ix_vocabularies_word'), 'vocabularies', ['word'], unique=True)
+    op.create_table('user_word_progress',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('word_id', sa.Integer(), nullable=False),
+    sa.Column('box_level', sa.Integer(), nullable=True),
+    sa.Column('next_review_at', sa.DateTime(), nullable=True),
+    sa.Column('last_reviewed_at', sa.DateTime(), nullable=True),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['word_id'], ['vocabularies.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_index(op.f('ix_user_word_progress_id'), 'user_word_progress', ['id'], unique=False)
     # ### end Alembic commands ###
 
 
 def downgrade() -> None:
     # ### commands auto generated by Alembic - please adjust! ###
+    op.drop_index(op.f('ix_user_word_progress_id'), table_name='user_word_progress')
+    op.drop_table('user_word_progress')
+    op.drop_index(op.f('ix_vocabularies_word'), table_name='vocabularies')
+    op.drop_index(op.f('ix_vocabularies_id'), table_name='vocabularies')
+    op.drop_table('vocabularies')
     op.drop_index(op.f('ix_video_materials_id'), table_name='video_materials')
     op.drop_table('video_materials')
     op.drop_table('user_items')
@@ -239,6 +313,11 @@ def downgrade() -> None:
     op.drop_table('lesson_progress')
     op.drop_index(op.f('ix_inventory_id'), table_name='inventory')
     op.drop_table('inventory')
+    op.drop_index(op.f('ix_user_courses_user_id'), table_name='user_courses')
+    op.drop_index(op.f('ix_user_courses_is_active'), table_name='user_courses')
+    op.drop_index(op.f('ix_user_courses_id'), table_name='user_courses')
+    op.drop_index(op.f('ix_user_courses_course_id'), table_name='user_courses')
+    op.drop_table('user_courses')
     op.drop_index(op.f('ix_student_profiles_id'), table_name='student_profiles')
     op.drop_table('student_profiles')
     op.drop_index(op.f('ix_lessons_id'), table_name='lessons')
@@ -250,6 +329,8 @@ def downgrade() -> None:
     op.drop_index(op.f('ix_orders_order_id'), table_name='orders')
     op.drop_index(op.f('ix_orders_id'), table_name='orders')
     op.drop_table('orders')
+    op.drop_index(op.f('ix_chat_history_id'), table_name='chat_history')
+    op.drop_table('chat_history')
     op.drop_index(op.f('ix_users_referral_code'), table_name='users')
     op.drop_index(op.f('ix_users_id'), table_name='users')
     op.drop_index(op.f('ix_users_email'), table_name='users')
@@ -258,6 +339,8 @@ def downgrade() -> None:
     op.drop_table('shop_items')
     op.drop_index(op.f('ix_items_id'), table_name='items')
     op.drop_table('items')
+    op.drop_index(op.f('ix_gem_packs_id'), table_name='gem_packs')
+    op.drop_table('gem_packs')
     op.drop_index(op.f('ix_courses_id'), table_name='courses')
     op.drop_table('courses')
     op.drop_index(op.f('ix_coupons_id'), table_name='coupons')

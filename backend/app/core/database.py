@@ -44,3 +44,5 @@ def init_db():
         print(f"Could not connect to postgres system database: {e}")
     finally:
         engine_postgres.dispose()
+        
+
