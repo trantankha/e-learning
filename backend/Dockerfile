@@ -1,7 +1,7 @@
 
 # Stage 1: Builder
 # Use an official Python runtime as a parent image
-FROM python:3.10-slim AS builder
+FROM python:3.11-slim AS builder
 
 WORKDIR /app
 
@@ -22,7 +22,7 @@ RUN pip install --user --no-cache-dir -r requirements.txt
 
 # Stage 2: Runner
 # Use the same slim python image for runner
-FROM python:3.10-slim AS runner
+FROM python:3.11-slim AS runner
 
 WORKDIR /app
 

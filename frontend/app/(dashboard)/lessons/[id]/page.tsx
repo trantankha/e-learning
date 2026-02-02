@@ -35,9 +35,21 @@ export default function LessonDetailPage() {
             if (earned_gems > 0 || earned_stars > 0) {
                 useStudentStore.getState().addRewards(earned_gems, earned_stars);
 
-                toast.success(`Chúc mừng! Con nhận được ${earned_gems} 💎 và ${earned_stars} ⭐`, {
+                let message = "";
+                let icon = '🎁';
+
+                if (earned_gems > 0 && earned_stars > 0) {
+                    message = `Chúc mừng! Con nhận được ${earned_gems} 💎 và ${earned_stars} ⭐`;
+                } else if (earned_gems > 0) {
+                    message = `Tuyệt vời! Con đã hoàn thành bài học và nhận ${earned_gems} 💎`;
+                } else if (earned_stars > 0) {
+                    message = `Xuất sắc! Con trả lời đúng và nhận được ${earned_stars} ⭐`;
+                    icon = '⭐';
+                }
+
+                toast.success(message, {
                     duration: 5000,
-                    icon: '🎁',
+                    icon: icon,
                     style: {
                         borderRadius: '20px',
                         background: '#fff',
@@ -68,10 +80,9 @@ export default function LessonDetailPage() {
         }, 250);
 
         // 2. Call API & Update State
-        // Submit with full score for video (assumed)
-        // Or score=0/0 if we don't count video as "graded" but want completion.
-        // Let's give 10/10 for watching video as encouragement if no questions.
-        await submitProgress(10, 10);
+        // Submit with 0/0 to indicate Video Completion (Not a Quiz)
+        // This ensures backend awards Gems (completion) but NOT Stars (no quiz passed)
+        await submitProgress(0, 0);
     };
 
     const handleQuizComplete = (score: number, total: number) => {

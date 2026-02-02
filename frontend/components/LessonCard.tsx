@@ -54,20 +54,13 @@ export function LessonCard({ lesson }: LessonCardProps) {
                 </h3>
 
                 <div className="mt-auto pt-2">
-                    {isCompleted && (
+                    {isCompleted && lesson.lesson_type === 'quiz' && (
                         <div className="flex items-center gap-1 justify-center">
                             {[1, 2, 3].map((star) => {
-                                // Simple logic: If score is high enough, fill the star.
-                                // Assuming max score 10.
-                                // Star 1: always if completed
-                                // Star 2: > 5
-                                // Star 3: > 8
-                                let isFilled = true;
-                                if (star === 2 && lesson.score <= 5) isFilled = false;
-                                if (star === 3 && lesson.score <= 8) isFilled = false;
-
-                                // If LessonType is NOT Quiz, implies assumed full stats or just 3 stars for completion
-                                if (lesson.lesson_type !== 'quiz') isFilled = true;
+                                let isFilled = false;
+                                if (lesson.score > 0) isFilled = true;
+                                if (star > 1 && lesson.score > 5) isFilled = true;
+                                if (star > 2 && lesson.score > 8) isFilled = true;
 
                                 return (
                                     <span key={star} className={cn(
