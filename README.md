@@ -316,7 +316,6 @@ e-learning/
 │   │   └── templates/                # Email templates
 │   ├── alembic/                      # Database migrations
 │   ├── requirements.txt               # Python dependencies
-│   ├── run.py                        # Entry point script
 │   ├── seed.py                       # Database seeding
 │   ├── Dockerfile                    # Docker image config
 │   └── alembic.ini                   # Alembic config
@@ -342,8 +341,6 @@ e-learning/
 │   ├── next.config.ts                # Next.js config
 │   └── Dockerfile                    # Docker image config
 │
-├── collection/                       # Postman/API collections
-├── resource/                         # Assets & resources
 ├── docker-compose.yml                # Docker services orchestration
 ├── .gitignore                        # Git ignore rules
 └── README.md                         # This file
